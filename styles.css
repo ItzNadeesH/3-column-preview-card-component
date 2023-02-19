@@ -1,0 +1,131 @@
+:root {
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+    --very-light-gray: hsl(0, 0%, 95%);
+
+    --Text: 15px;
+}
+
+.visually-hidden {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    display: grid;
+    place-content: center;
+    background-color: var(--very-light-gray);
+    padding: 5.5rem 1.5rem;
+}
+
+.card-container {
+    max-width: 30rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.outer-container {
+    flex: 1;
+}
+
+.inner-container {
+    padding: 3rem;
+    height: 100%;
+}
+
+.top-container .inner-container {
+    background-color: var(--bright-orange);
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.mid-container .inner-container {
+    background-color: var(--dark-cyan);
+}
+
+.bottom-container .inner-container {
+    background-color: var(--very-dark-cyan);
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.card-container h2 {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 700;
+    color: var(--very-light-gray);
+    font-size: 2.375rem;
+    margin: 1.5rem 0;
+}
+
+.card-container p {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: var(--Text);
+    color: var(--transparent-white);
+    margin-bottom: 1.5rem;
+}
+
+.card-container a {
+    display: inline-block;
+    text-decoration: none;
+    font-family: "Lexend Deca", sans-serif;
+    padding: 0.6rem 2rem;
+    background-color: var(--very-light-gray);
+    border-radius: 2rem;
+    border: var(--very-light-gray) solid 2px;
+    vertical-align: top;
+}
+
+.top-container .inner-container a {
+    color: var(--bright-orange);
+}
+
+.mid-container .inner-container a {
+    color: var(--dark-cyan);
+}
+
+.bottom-container .inner-container a {
+    color: var(--very-dark-cyan);
+}
+
+.card-container a:hover {
+    background-color: transparent;
+    color: var(--very-light-gray);
+}
+
+@media (min-width: 820px) {
+    .card-container {
+        flex-direction: row;
+        max-width: 57.5rem;
+    }
+    .card-container p {
+        margin-bottom: 5.25rem;
+    }
+    .left-container .inner-container {
+        border-radius: 0.5rem 0 0 0.5rem;
+    } 
+    .right-container .inner-container {
+        border-radius: 0 0.5rem 0.5rem 0;
+    }
+}
